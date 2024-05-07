@@ -4,7 +4,7 @@ class Cores(models.Model):
     cor = models.CharField('Cor', max_length=200)
 
     def __str__(self):
-        return self.cor
+        return str(self.cor)
     
 class Produtos(models.Model):
     produto = models.CharField('Produto', max_length=200)
@@ -16,9 +16,9 @@ class Produtos(models.Model):
     modificado = models.DateTimeField('Modificado em', auto_now=True)
 
     def __str__(self):
-        return self.produto
+        return str(self.produto)
     
-    def __str__(self):
+    #def __str__(self):
         return self.preco * self.quantidade
     
     class Meta:
