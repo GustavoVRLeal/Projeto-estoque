@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django</title>
+    <title>EstoqueWeb</title>
 </head>
 <body>
-    <h1>Responsive Horizoltal-to-Scrollable Menu</h1>
     <a href="{% url 'produto:list_produto' %}">Produtos</a>
+    <a href="{% url 'entrada:list_entrada' %}">Entradas</a>
     {% block product %}{% endblock %}
 </body>
 </html>

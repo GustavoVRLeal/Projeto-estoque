@@ -23,8 +23,23 @@ def new_produto(request):
         }
         return render(request, template_name, context)
 
-def update_produto(request):
-    pass
+def update_produto(request, pk):
+    produto = Produtos.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, instance=produto)
+        if form.is_valid():
+            form.save()
+            return redirect('produto:list_produto')
+    else:
+        template_name = 'update_produto.html'
+        context= {
+            'form': ProdutoForm(instance=produto),
+            'pk': pk,
+        }
+        return render(request, template_name, context)
 
-def delete_produto(request):
-    pass
+
+def delete_produto(request, pk):
+    produto = Produtos.objects.get(pk=pk)
+    produto.delete()
+    return redirect('produto:list_produto')
