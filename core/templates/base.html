@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-{% load static %} <!--Ele vai carregar o CSS e o JavaScript-->
-<html lang="pt-br">
+{% load static %} 
+<html lang="pt-br" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +31,7 @@
                 <div class="navbar-start">
                     <a class="navbar-item" href="{% url 'produto:list_produto' %}">Produto</a>
                     <a class="navbar-item" href="{% url 'entrada:list_entrada' %}">Entrada</a>
+                    <a class="navbar-item" href="{% url 'saida:list_saida' %}">Saida</a>
                 </div>
             </div>
         
@@ -63,7 +64,5 @@
             </p>
         </div>
     </footer>
-</body>
-</html>
 </body>
 </html>
