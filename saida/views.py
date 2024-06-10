@@ -48,9 +48,9 @@ def update_saida(request, pk):
         }
         return render(request, template_name, context)
 
-def delete_saida(pk):
-    saida = Saidas.objects.get(pk=pk)
-    saida.produto.quantidade = saida.produto.quantidade + saida.quantidade
-    saida.produto.save()
-    saida.delete()
+def delete_saida(request, pk):
+    saidas = Saidas.objects.get(pk=pk)
+    saidas.produto.quantidade = saidas.produto.quantidade + saidas.quantidade
+    saidas.produto.save()
+    saidas.delete()
     return redirect('saida:list_saida')
